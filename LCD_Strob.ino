@@ -6,8 +6,6 @@
 This program will test the LCD panel and the buttons
 Mark Bramwell, July 2010
 
-TESTCommunication.
-
 ********************************************************/
 
 // select the pins used on the LCD panel
