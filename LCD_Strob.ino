@@ -1,14 +1,12 @@
 //Sample using LiquidCrystal library
 #include <LiquidCrystal.h>
+#include <Wire.h>
 
 /*******************************************************
 
 This program will test the LCD panel and the buttons
 Mark Bramwell, July 2010
-
-TESTCommunication.
-Test Communication. 
-
+lollllllll
 ********************************************************/
 
 // select the pins used on the LCD panel
@@ -41,10 +39,12 @@ double incVal = 1;
 
 // read the buttons
 
+char x[10];
+
 void updateFreq(String dir)
 {
   Serial.println(String(freq)); //For debugging
-  double newFreq = freq;
+  float newFreq = freq;
   String freqString;
   if (dir == "+") newFreq = freq + incVal; //increase or decrease frequency
   else if (dir == "-") newFreq = freq - incVal;
@@ -68,6 +68,12 @@ void updateFreq(String dir)
   }
   lcd.print(invFreqString);
   lcd.leftToRight();
+  
+  dtostrf(newFreq, 3, 2, x);
+  Wire.beginTransmission(8); // transmit to device #8
+  Wire.write(x);        
+  Wire.endTransmission();    // stop transmitting
+  
 }
 
 
@@ -140,10 +146,15 @@ void setup()
   lcd.setCursor(0, 0);
   lcd.print("enjoy :)");
   Serial.begin(9600);
+  Wire.begin();
 }
 
 void loop()
 {
+
+ 
+
+  
   lcd.setCursor(9, 0);
   lcd.print(String(25, HEX));
 
