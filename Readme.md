@@ -8,7 +8,7 @@ Upload the [LCD_Strob.ino][master] script to the master Arduino and the [PWM.ino
 ### Circuit
 ![Schematics][Schematics]
 ### First working prototype
-For now, I'm only driving a LED, as seen in the picture... but it works! :)
+For now, I'm only driving a small LED without an external power source, as seen in the picture... but it works! :)
 ![First prototype][firstProto]
 ### Library requirement
 [Timer1][2]
