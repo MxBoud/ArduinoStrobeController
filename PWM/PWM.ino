@@ -8,8 +8,8 @@
 String inputString = "";         // a string to hold incoming data
 boolean stringComplete = false;  // whether the string is complete
 
-double period = 1000000; 
-double duty = 511;
+double period = 1000000; //Default values for the period (in microseconds)
+double duty = 100; //Defaul value for the Dutycycle (uint 12, i think). 
 
 void setup()
 {
